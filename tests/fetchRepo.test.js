@@ -41,7 +41,7 @@ describe("Test fetchRepo", () => {
   it("should fetch correct user repo", async () => {
     mock.onPost("https://api.github.com/graphql").reply(200, data_user);
 
-    let repo = await fetchRepo("anuraghazra", "convoychat");
+    let repo = await fetchRepo("jvcss", "convoychat");
 
     expect(repo).toStrictEqual({
       ...data_repo.repository,
@@ -52,7 +52,7 @@ describe("Test fetchRepo", () => {
   it("should fetch correct org repo", async () => {
     mock.onPost("https://api.github.com/graphql").reply(200, data_org);
 
-    let repo = await fetchRepo("anuraghazra", "convoychat");
+    let repo = await fetchRepo("jvcss", "convoychat");
     expect(repo).toStrictEqual({
       ...data_repo.repository,
       starCount: data_repo.repository.stargazers.totalCount,
@@ -64,7 +64,7 @@ describe("Test fetchRepo", () => {
       .onPost("https://api.github.com/graphql")
       .reply(200, { data: { user: { repository: null }, organization: null } });
 
-    await expect(fetchRepo("anuraghazra", "convoychat")).rejects.toThrow(
+    await expect(fetchRepo("jvcss", "convoychat")).rejects.toThrow(
       "User Repository Not found",
     );
   });
@@ -74,7 +74,7 @@ describe("Test fetchRepo", () => {
       .onPost("https://api.github.com/graphql")
       .reply(200, { data: { user: null, organization: { repository: null } } });
 
-    await expect(fetchRepo("anuraghazra", "convoychat")).rejects.toThrow(
+    await expect(fetchRepo("jvcss", "convoychat")).rejects.toThrow(
       "Organization Repository Not found",
     );
   });
@@ -84,7 +84,7 @@ describe("Test fetchRepo", () => {
       .onPost("https://api.github.com/graphql")
       .reply(200, { data: { user: null, organization: null } });
 
-    await expect(fetchRepo("anuraghazra", "convoychat")).rejects.toThrow(
+    await expect(fetchRepo("jvcss", "convoychat")).rejects.toThrow(
       "Not found",
     );
   });
@@ -97,7 +97,7 @@ describe("Test fetchRepo", () => {
       },
     });
 
-    await expect(fetchRepo("anuraghazra", "convoychat")).rejects.toThrow(
+    await expect(fetchRepo("jvcss", "convoychat")).rejects.toThrow(
       "User Repository Not found",
     );
   });

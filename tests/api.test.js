@@ -66,7 +66,7 @@ const mock = new MockAdapter(axios);
 const faker = (query, data) => {
   const req = {
     query: {
-      username: "anuraghazra",
+      username: "jvcss",
       ...query,
     },
   };
@@ -110,7 +110,7 @@ describe("Test /api/", () => {
   it("should get the query options", async () => {
     const { req, res } = faker(
       {
-        username: "anuraghazra",
+        username: "jvcss",
         hide: "issues,prs,contribs",
         show_icons: true,
         hide_border: true,
@@ -232,7 +232,7 @@ describe("Test /api/", () => {
   it("should add private contributions", async () => {
     const { req, res } = faker(
       {
-        username: "anuraghazra",
+        username: "jvcss",
         count_private: true,
       },
       data_stats,
@@ -264,7 +264,7 @@ describe("Test /api/", () => {
   it("should allow changing ring_color", async () => {
     const { req, res } = faker(
       {
-        username: "anuraghazra",
+        username: "jvcss",
         hide: "issues,prs,contribs",
         show_icons: true,
         hide_border: true,
