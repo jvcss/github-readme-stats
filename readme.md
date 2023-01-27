@@ -511,7 +511,7 @@ Since the GitHub API only allows 5k requests per hour, my `https://github-readme
 [![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/jvcss/github-readme-stats)
 
 <details>
- <summary><b>:hammer_and_wrench: Step-by-step guide on setting up your own Vercel instance</b></summary>
+ <summary><b> 🛠️ Step-by-step guide on setting up your own Vercel instance</b></summary>
 
 1.  Go to [vercel.com](https://vercel.com/).
 2.  Click on `Log in`.
